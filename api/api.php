@@ -1,7 +1,5 @@
 <?php
 
-
-
 include ('../Models/ProductoDAO.php');
 
 header("Content-Type: application/json");
