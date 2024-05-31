@@ -32,20 +32,20 @@ function cargarDatos() {
         <td>${row.nombre}</td>
         <td>${row.descripcion}</td>
         <td>
-        <button onclick='traerDatos(${row.id})' type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Actualizar</button>
+        <button onclick='traerDatos(${row.id})' type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >EDITAR</button>
         </td>
         <td>
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmModal-${row.id}">Eliminar</button>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmModal-${row.id}">ELIMINAR</button>
             <div class="modal fade" id="confirmModal-${row.id}" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel-${row.Id}" aria-hidden="true">
             <div class="modal-dialog" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="confirmModalLabel">ELIMINAR  REGISTRO</h5>
+                            <h5 class="modal-title" id="confirmModalLabel">¿SEGURO QUE DESEA ELIMINAR EL PRODUCTO: "${row.nombre}" de la Base de Datos?</h5>
                           </div>
                           
                           <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button class="btn btn-danger" data-dismiss="modal" onClick='eliminarClase(${row.id})'>Eliminar</button>
+                            <button class="btn btn-danger" data-dismiss="modal" onClick='eliminarClase(${row.id})'>ELIMINAR</button>
                           </div>
                         </div>
                       </div>
@@ -129,7 +129,7 @@ function traerDatos(id) {
     var valDescripcion = inputDescripcion.value;
     limpiarFormulario();
     guardarClase(valId, valNombre, valDescripcion);
-    mostrarAlerta("Se actualizo con exito")
+    mostrarAlerta("ACTUALIZADO correctamente")
   };
 }
 
@@ -140,7 +140,7 @@ function mostrarAlerta(mensaje) {
 
   setTimeout(function() {
     alerta.hidden = true;
-  }, 1000); 
+  }, 2000); 
 }
 
 
